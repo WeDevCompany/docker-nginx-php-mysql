@@ -1,6 +1,6 @@
 <?php
 
-namespace Wedev\Wedev;
+namespace WeDev\Wedev;
 
 class Foo
 {

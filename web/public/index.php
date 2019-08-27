@@ -1,8 +1,7 @@
 <?php
 
 include '../app/vendor/autoload.php';
-//dd("a");
-//$foo = new WeDev\WeDev\Foo();
+$foo = new Wedev\WeDev\Foo();
 
 ?><!DOCTYPE html>
 <html>
