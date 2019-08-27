@@ -1,8 +1,8 @@
 <?php
 
-namespace AppTest\Acme;
+namespace WeDevTest\WeDev;
 
-use App\Acme\Foo;
+use WeDev\WeDev\Foo;
 use PHPUnit\Framework\TestCase;
 
 class FooTest extends TestCase
