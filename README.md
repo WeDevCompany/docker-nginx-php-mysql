@@ -1,6 +1,6 @@
 # Nginx PHP MySQL [![Build Status](https://travis-ci.org/nanoninja/docker-nginx-php-mysql.svg?branch=master)](https://travis-ci.org/nanoninja/docker-nginx-php-mysql) [![GitHub version](https://badge.fury.io/gh/nanoninja%2Fdocker-nginx-php-mysql.svg)](https://badge.fury.io/gh/nanoninja%2Fdocker-nginx-php-mysql)
 
-Docker running Nginx, PHP-FPM, Composer, MySQL and PHPMyAdmin.
+Docker running Nginx, PHP-FPM, Composer, MySQL and Nodejs.
 
 ## Overview
 
@@ -70,9 +70,9 @@ sudo apt install build-essential
 
 * [Nginx](https://hub.docker.com/_/nginx/)
 * [MySQL](https://hub.docker.com/_/mysql/)
-* [PHP-FPM](https://hub.docker.com/r/nanoninja/php-fpm/)
+* [PHP-FPM](https://hub.docker.com/r/php-fpm/)
 * [Composer](https://hub.docker.com/_/composer/)
-* [PHPMyAdmin](https://hub.docker.com/r/phpmyadmin/phpmyadmin/)
+* [Nodejs](https://hub.docker.com/_/node/)
 * [Generate Certificate](https://hub.docker.com/r/jacoelho/generate-certificate/)
 
 You should be careful when installing third party web servers such as MySQL or Nginx.
@@ -82,7 +82,7 @@ This project use the following ports :
 | Server     | Port |
 |------------|------|
 | MySQL      | 8989 |
-| PHPMyAdmin | 8080 |
+| Nodejs     | 8080 |
 | Nginx      | 8000 |
 | Nginx SSL  | 3000 |
 
@@ -366,6 +366,10 @@ source .env && sudo docker exec -i $(sudo docker-compose ps -q mysqldb) mysql -u
 
 ___
 
-## Help us
+## Node JS
 
-Any thought, feedback or (hopefully not!)
+### Configuration files
+
+### JSLint
+
+### ESLint
