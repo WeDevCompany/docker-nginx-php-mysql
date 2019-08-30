@@ -44,15 +44,15 @@ services:
     node:
         image: node:${NODE_VERSION}
         #container_name: front
-        #build: ./
         working_dir: /var/www/html/public
         restart: always
         environment:
             - NODE_ENV=${NODE_ENVIROMENT}
         ports:
-            - "5000:8080"
+            - "4040:5000"
         command: /bin/sh -c "npm install -y && npm start"
         volumes:
             - "./web/public:/var/www/html/public"
             - "./web/public/node_modules:/var/www/html/public/node_modules"
             - "./web/public/src:/var/www/html/public/src"
+            - "./web/public/build:/var/www/html/public/build"
