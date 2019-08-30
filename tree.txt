@@ -1,0 +1,59 @@
+.
+├── data
+│   └── db
+│       └── mysql
+├── doc
+│   ├── configure-cacert-for-local-macosx.md
+│   ├── images
+│   │   ├── cacert-1-warning.png
+│   │   ├── cacert-2-open-keychain.png
+│   │   ├── cacert-3-add-cacert-file-import.png
+│   │   ├── cacert-4-locate-cert.png
+│   │   ├── cacert-5-set-to-always-trust.png
+│   │   ├── cacert-6-reload-page.png
+│   │   ├── ps-mac-php-cli-add-interpreter.png
+│   │   ├── ps-mac-php-interpreter.png
+│   │   ├── ps-mac-php-phpunit-config.png
+│   │   ├── ps-mac-php-phpunit-demo.png
+│   │   ├── ps-mac-php-phpunit.png
+│   │   ├── ps-mac-php-xdebug-demo.png
+│   │   ├── ps-mac-php-xdebug.png
+│   │   ├── ps-mac-php-xdebug-proxy.png
+│   │   └── ps-mac-php-xdebug-server.png
+│   └── phpstorm-macosx.md
+├── docker-compose.yml
+├── etc
+│   ├── nginx
+│   │   ├── default.conf
+│   │   └── default.template.conf
+│   ├── php
+│   │   └── php.ini
+│   └── ssl
+│       ├── cacert.pem
+│       ├── server.key
+│       └── server.pem
+├── Makefile
+├── README.md
+└── web
+    ├── app
+    │   ├── composer.json
+    │   ├── composer.json.dist
+    │   ├── composer.lock
+    │   ├── phpunit.xml.dist
+    │   ├── src
+    │   │   └── Foo.php
+    │   ├── test
+    │   │   ├── bootstrap.php
+    │   │   └── FooTest.php
+    │   └── vendor
+    └── public
+        ├── index.php
+        ├── node_modules
+        ├── package.json
+        ├── package.json.dist
+        ├── package-lock.json
+        ├── src
+        │   ├── app.js
+        │   └── style.scss
+        ├── webpack.config.js 
+        └── webpack.config.js.dist

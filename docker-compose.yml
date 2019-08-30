@@ -1,7 +1,8 @@
-version: '3'
+version: "3"
 services:
     web:
-        image: nginx:alpine
+        image: nginx:${NGINX_VERSION}
+        #container_name: web
         volumes:
             - "./etc/nginx/default.conf:/etc/nginx/conf.d/default.conf"
             - "./etc/ssl:/etc/ssl"
@@ -19,11 +20,13 @@ services:
             - mysqldb
     php:
         image: php:${PHP_VERSION}
+        #container_name: back
         restart: always
         volumes:
             - "./etc/php/php.ini:/usr/local/etc/php/conf.d/php.ini"
             - "./web:/var/www/html"
     mysqldb:
+        #container_name: db
         image: mysql:${MYSQL_VERSION}
         container_name: ${MYSQL_HOST}
         restart: always
@@ -38,3 +41,18 @@ services:
             - "8989:3306"
         volumes:
             - "./data/db/mysql:/var/lib/mysql"
+    node:
+        image: node:${NODE_VERSION}
+        #container_name: front
+        #build: ./
+        working_dir: /var/www/html/public
+        restart: always
+        environment:
+            - NODE_ENV=${NODE_ENVIROMENT}
+        ports:
+            - "5000:8080"
+        command: /bin/sh -c "npm install -y && npm start"
+        volumes:
+            - "./web/public:/var/www/html/public"
+            - "./web/public/node_modules:/var/www/html/public/node_modules"
+            - "./web/public/src:/var/www/html/public/src"
