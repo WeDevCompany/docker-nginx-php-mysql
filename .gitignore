@@ -30,3 +30,6 @@ web/public/webpack.config.js
 web/public/.babelrc
 web/public/webpack.config
 web/public/.eslintrc.js
+
+web/app/build
+web/app/build/*.

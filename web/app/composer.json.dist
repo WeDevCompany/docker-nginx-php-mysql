@@ -19,6 +19,11 @@
             "WeDevTest\\WeDev\\": "test/"
         }
     },
+    "scripts": {
+        "pre-install-cmd": [
+            "[[ -f .git/hooks/commit-msg ]] || curl https://gist.githubusercontent.com/wesbos/8aec9d2ff7f7cf9dd65ca2c20d5dfc23/raw/f662c8b15515180c8310e2d20d192dd3d92a7d28/commit-msg --output .git/hooks/commit-msg && chmod +x .git/hooks/commit-msg"
+        ]
+    },
     "minimum-stability": "stable",
     "prefer-stable": true
 }
