@@ -26,10 +26,13 @@ etc/ssl/
 
 
 web/public/package.json
+web/public/package-lock.json
 web/public/webpack.config.js
 web/public/.babelrc
 web/public/webpack.config
 web/public/.eslintrc.js
+web/public/node_modules
+
 
 web/app/build
 web/app/build/*.
