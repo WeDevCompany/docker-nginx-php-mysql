@@ -82,7 +82,7 @@ This project use the following ports :
 | Server     | Port |
 |------------|------|
 | MySQL      | 8989 |
-| Nodejs     | 8080 |
+| Nodejs     | 5000 |
 | Nginx      | 8000 |
 | Nginx SSL  | 3000 |
 
@@ -131,7 +131,14 @@ cd docker-nginx-php-mysql
     │       ├── FooTest.php
     │       └── bootstrap.php
     └── public
-        └── index.php
+        ├── index.php
+        ├── .babelrc.dist
+        ├── .eslintrc.js.dist
+        ├── webpack.config.dist
+        └── src
+            ├── app.js
+            └── style.scss
+
 ```
 
 ___
@@ -189,10 +196,26 @@ ___
 
 ## Run the application
 
-1. Copying the composer configuration file : 
+1. Copying the composer configuration file and other files: 
 
     ```sh
     cp web/app/composer.json.dist web/app/composer.json
+    ```
+
+    ```sh
+    cp web/public/package.json.dist web/public/package.json
+    ```
+
+    ```sh
+    cp web/public/webpack.config.dist web/public/webpack.config
+    ```
+
+    ```sh
+    cp web/public/.babelrc.dist web/public/.babelrc
+    ```
+
+    ```sh
+    cp web/public/.elintrc.dist web/public/.elintrc
     ```
 
 2. Start the application :

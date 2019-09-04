@@ -29,3 +29,4 @@ web/public/package.json
 web/public/webpack.config.js
 web/public/.babelrc
 web/public/webpack.config
+web/public/.eslintrc.js
