@@ -21,10 +21,15 @@ help:
 	@echo "  mysql-dump          Create backup of all databases"
 	@echo "  mysql-restore       Restore backup of all databases"
 	@echo "  phpmd               Analyse the API with PHP Mess Detector"
-	@echo "  test                Test application"
+	@echo "  test-php            Test PHP application"
+	@echo "  test-js            Test JS application"
 
 init:
 	@$(shell cp -n $(shell pwd)/web/app/composer.json.dist $(shell pwd)/web/app/composer.json 2> /dev/null)
+	@$(shell cp -n $(shell pwd)/web/public/package.json.dist $(shell pwd)/web/public/package.json 2> /dev/null)
+	@$(shell cp -n $(shell pwd)/web/public/webpack.config.js.dist $(shell pwd)/web/public/webpack.config.js 2> /dev/null)
+	@$(shell cp -n $(shell pwd)/web/public/.eslintrc.js.dist $(shell pwd)/web/public/.eslintrc.js 2> /dev/null)
+	@$(shell cp -n $(shell pwd)/web/public/.babelrc.dist $(shell pwd)/web/public/.babelrc 2> /dev/null)
 
 apidoc:
 	@docker-compose exec -T php php -d memory_limit=256M -d xdebug.profiler_enable=0 ./app/vendor/bin/apigen generate app/src --destination app/doc
@@ -76,9 +81,12 @@ phpmd:
 	./app/src \
 	text cleancode,codesize,controversial,design,naming,unusedcode
 
-test: code-sniff
+test-php: code-sniff
 	@docker-compose exec -T php ./app/vendor/bin/phpunit --colors=always --configuration ./app/
 	@make resetOwner
+
+test-js:
+	@docker-compose exec -T node "./web/public/npm run jest"
 
 resetOwner:
 	@$(shell chown -Rf $(SUDO_USER):$(shell id -g -n $(SUDO_USER)) $(MYSQL_DUMPS_DIR) "$(shell pwd)/etc/ssl" "$(shell pwd)/web/app" 2> /dev/null)
