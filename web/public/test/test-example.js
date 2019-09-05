@@ -24,4 +24,4 @@ test( 'Subtracts 2 negative numbers', () => {
   const result = subtract( -8, -3 )
   const expected = -5
   expect( result ).toBe( expected )
-} )
+})
