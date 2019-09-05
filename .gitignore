@@ -34,5 +34,6 @@ web/public/.eslintrc.js
 web/public/node_modules
 
 
-web/app/build
-web/app/build/*.
+web/public/build
+web/public/build/*
+web/public/.env
