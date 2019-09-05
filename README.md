@@ -44,7 +44,7 @@ All requisites should be available for your distribution. The most important are
 * [Docker](https://docs.docker.com/engine/installation/)
 * [Docker Compose](https://docs.docker.com/compose/install/)
 
-Check if `docker-compose` is already installed by entering the following command : 
+Check if `docker-compose` is already installed by entering the following command :
 
 ```sh
 which docker-compose
@@ -124,6 +124,8 @@ cd docker-nginx-php-mysql
 └── web
     ├── app
     │   ├── composer.json.dist
+    │   ├──.php_cs.dist
+    │   ├── phpcs.xml.dist
     │   ├── phpunit.xml.dist
     │   ├── src
     │   │   └── Foo.php
@@ -196,7 +198,7 @@ ___
 
 ## Run the application
 
-1. Copying the composer configuration file and other files: 
+1. Copying the composer configuration file and other files:
 
     ```sh
     cp web/app/composer.json.dist web/app/composer.json
