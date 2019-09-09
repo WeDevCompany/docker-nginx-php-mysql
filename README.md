@@ -209,7 +209,7 @@ ___
     ```
 
     ```sh
-    cp web/public/webpack.config.dist web/public/webpack.config
+    cp web/public/webpack.config.js.dist web/public/webpack.config.js
     ```
 
     ```sh
