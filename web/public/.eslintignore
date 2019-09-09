@@ -1,0 +1,11 @@
+package.json
+package-lock.json
+node_modules
+build
+dist
+public
+serviceWorker.js
+!.*.js
+src/test/*
+src/scss/*
+webpack.config.js

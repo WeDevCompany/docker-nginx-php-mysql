@@ -1,8 +1,9 @@
 // import css
-import "./style.scss"
+import './scss/style.scss';
 
-import { add } from './mathFunctions.js';
+import { add } from './js/mathFunctions';
 
 // Real code to execute
-document.getElementById("btn-alert").addEventListener("click", showAlert);
-console.log(add(2+2));
+// document.getElementById('btn-alert').addEventListener('click', showAlert);
+const x = add(2 + 2);
+console.log(x);

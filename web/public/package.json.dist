@@ -7,7 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server",
     "jest": "jest --verbose",
-    "webpack-dev": "webpack --mode=development"
+    "webpack-dev": "webpack --mode=development",
+    "prettier": "prettier \"**/*.{js,jsx,css,json,scss,vue,ts,css,sass,less}\"",
+    "format": "npm run prettier -- --write",
+    "lint": "./node_modules/.bin/eslint src/.*",
+    "lint:fix": "npm run lint -- --fix",
+    "validate": "npm run prettier -- --list-different && npm run lint"
   },
   "keywords": [],
   "author": "",
@@ -32,14 +37,27 @@
     "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0",
     "eslint": "^6.3.0",
+    "eslint-config-prettier": "^6.2.0",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
+    "lint-staged": "^9.2.5",
     "eslint-plugin-vue": "^5.2.3",
-    "jest": "^24.9.0"
+    "jest": "^24.9.0",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "husky": "^3.0.5"
   },
   "jest": {
     "testMatch": [
       "**/test/*.js?(x)"
     ]
+  },
+  "husky":{
+    "hooks":{
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged":{
+    "**/*.{jsx,js,md,ts,css,sass,less,graphql,yml,yaml,scss,json,vue}": ["npm run format","npm run lint:fix", "git add"]
   }
 }
