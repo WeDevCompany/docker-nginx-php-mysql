@@ -31,6 +31,9 @@ init:
 	@$(shell cp -n $(shell pwd)/web/public/.eslintrc.js.dist $(shell pwd)/web/public/.eslintrc.js 2> /dev/null)
 	@$(shell cp -n $(shell pwd)/web/public/.babelrc.dist $(shell pwd)/web/public/.babelrc 2> /dev/null)
 
+config:
+	@make init
+
 apidoc:
 	@docker-compose exec -T php php -d memory_limit=256M -d xdebug.profiler_enable=0 ./app/vendor/bin/apigen generate app/src --destination app/doc
 	@make resetOwner
