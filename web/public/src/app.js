@@ -3,9 +3,11 @@ import './scss/style.scss';
 
 import { add } from './js/mathFunctions';
 
-function showCount() {
-  const x = add(2 + 2);
-  console.log(x);
-}
+const y = add(2 + 2);
+console.log(y);
+
 // Real code to execute
-document.getElementById('btn-alert').addEventListener('click', showCount);
+document.getElementById('btn-alert').addEventListener('click', () => {
+  const x = add(2 + 2);
+  alert(x);
+});
