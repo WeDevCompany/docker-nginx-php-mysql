@@ -17,7 +17,7 @@ $foo = new WeDev\WeDev\Foo();
         <h1>Docker <?php echo $foo->getName(); ?></h1>
         <button id="btn-alert">2 + 2</button>
     </body>
-    <<footer>
+    <footer>
         <script src="build/bundle.js"></script>
     </footer>
 </html>
