@@ -22,7 +22,7 @@ help:
 	@echo "  mysql-restore       Restore backup of all databases"
 	@echo "  phpmd               Analyse the API with PHP Mess Detector"
 	@echo "  test-php            Test PHP application"
-	@echo "  test-js            Test JS application"
+	@echo "  test-js             Test JS application"
 
 init:
 	@$(shell cp -n $(shell pwd)/web/app/composer.json.dist $(shell pwd)/web/app/composer.json 2> /dev/null)

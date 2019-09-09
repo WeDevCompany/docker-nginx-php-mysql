@@ -217,7 +217,7 @@ ___
     ```
 
     ```sh
-    cp web/public/.elintrc.dist web/public/.elintrc
+    cp web/public/.eslintrc.dist web/public/.eslintrc
     ```
 
 2. Start the application :
