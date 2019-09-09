@@ -61,6 +61,9 @@ composer-up:
 npm-install:
 	@docker run --rm -v $(shell pwd)/web/public:/public npm install
 
+npx-webpack:
+	@docker run --rm -v $(shell pwd)/web/public:/public npx webpack --mode=dev
+
 docker-start: init
 	docker-compose up -d
 
