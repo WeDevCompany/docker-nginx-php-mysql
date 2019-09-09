@@ -398,3 +398,24 @@ ___
 ### JSLint
 
 ### ESLint
+
+### Husky
+Is the pre commit handler for JS, is written into the `package.js` and it could be something like
+```jsx=
+"husky": {
+    "hooks": {
+      "pre-commit": "./node_modules/.bin/eslint --fix",
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+```
+```jsx=
+"husky":{
+  "hooks":{
+    "pre-commit": "lint-staged"
+  }
+},
+"lint-staged":{
+  "**/*.{js,jsx,css}": ["npm run format","npm run lint:fix", "git add"]
+},
+```
