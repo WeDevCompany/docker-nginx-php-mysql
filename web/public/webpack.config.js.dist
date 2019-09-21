@@ -1,9 +1,8 @@
-
 // type of env
 const devMode = process.env.NODE_ENV !== 'production';
 
 // Plugins
-const HtmlWebpackPlugin = require('html-webpack-plugin');// may not be needit
+//const HtmlWebpackPlugin = require('html-webpack-plugin');// may not be needit
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 
