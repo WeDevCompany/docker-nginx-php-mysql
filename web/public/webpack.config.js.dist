@@ -5,18 +5,19 @@ const devMode = process.env.NODE_ENV !== 'production';
 // Plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');// may not be needit
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 // Main webpack module to export
 module.exports = {
     resolve: {extensions: ['.js','.jsx']},
-    entry: "./src/app.js",
+    entry: {
+        app: "./src/app.js"
+    },
     output: {
         path: __dirname + '/build',
-        filename: 'bundle.js',
+        filename: '[name].[contenthash].bundle.js',
     },
-    devServer: {
-        port: 5000
-    },
+    watch:true,
     module: {
         rules: [
           {
@@ -35,6 +36,7 @@ module.exports = {
 //        }),
         new MiniCssExtractPlugin({
             filename: 'style.css',
-        })
+        }),
+        new ManifestPlugin()
     ]
 }
