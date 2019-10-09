@@ -4,6 +4,7 @@
     },
     "require-dev": {
         "apigen/apigen": "dev-master",
+        "vlucas/phpdotenv": "^3.6",
         "phpmd/phpmd": "@stable",
         "phpunit/phpunit": "^7.0",
         "roave/better-reflection": "dev-master",

@@ -220,6 +220,10 @@ ___
     cp web/public/.eslintrc.js.dist web/public/.eslintrc.js
     ```
 
+    ```sh
+    cp web/public/.env.dist web/public/.env
+    ```
+
 2. Start the application :
 
     ```sh
