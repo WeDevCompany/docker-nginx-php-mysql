@@ -11,12 +11,17 @@ class Foo
 
     public function getManifestPath()
     {
-        return getenv('MANIFEST_PATH');
+        return getenv('MANIFEST_RELATIVE_PATH');
+    }
+
+    public function basePath()
+    {
+        return dirname($_SERVER["DOCUMENT_ROOT"] . '../');
     }
 
     public function getJavascriptApp()
     {
-        $manifest = file_get_contents($this->getManifestPath() . 'manifest.json');
+        $manifest = file_get_contents($this->basePath() . $this->getManifestPath() . 'manifest.json');
         $jsonArray = json_decode($manifest, true);
         return $jsonArray['app.js'];
     }

@@ -2,10 +2,11 @@
 
 include '../app/vendor/autoload.php';
 
-$dotenv = Dotenv\Dotenv::create(__DIR__);
+$dotenv = Dotenv\Dotenv::create(dirname($_SERVER["DOCUMENT_ROOT"] . '../'));
 $dotenv->load();
 
 $foo = new WeDev\WeDev\Foo();
+var_dump(__DIR__);
 
 ?>
 <!DOCTYPE html>
@@ -20,7 +21,7 @@ $foo = new WeDev\WeDev\Foo();
     <body>
         <h1>Docker <?php echo $foo->getName(); ?></h1>
         <p>Manifest path: <?php echo $foo->getManifestPath(); ?></p>
-        <p>Manifest path: <?php echo $foo->getJavascriptApp(); ?></p>
+        <p>app.js Name: <?php echo $foo->getJavascriptApp(); ?></p>
         <button id="btn-alert">2 + 2</button>
     </body>
     <footer>

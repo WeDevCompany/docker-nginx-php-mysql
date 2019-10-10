@@ -38,3 +38,5 @@ web/public/build
 web/public/build/*
 web/public/.env
 web/public/.prettierrc.js
+
+web/.env
