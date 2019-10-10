@@ -224,6 +224,10 @@ ___
     cp web/public/.env.dist web/public/.env
     ```
 
+    ```sh
+    cp web/.env.dist web/.env
+    ```
+
 2. Start the application :
 
     ```sh
