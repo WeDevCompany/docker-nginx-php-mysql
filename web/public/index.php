@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 require_once '../app/vendor/autoload.php';
 
-$front_assets_loader = new WeDev\Wedev\Infrastructure\FrontAssetsLoader();
+$front_assets_loader = new WeDev\WeDev\Infrastructure\FrontAssetsLoader();
 $foo = new WeDev\WeDev\Foo();
 var_dump(__DIR__);
 

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types = 1);
 
-namespace WeDev\Wedev\Infrastructure;
+namespace WeDev\WeDev\Infrastructure;
 
 use Dotenv\Dotenv;
 
@@ -11,7 +11,7 @@ class FrontAssetsLoader implements FrontAssetsLoaderInterface
 
     public function __construct()
     {
-        (Dotenv::create(dirname(__DIR__ . '../../')))->load();
+        (Dotenv::create(dirname($_SERVER["DOCUMENT_ROOT"] . '../')))->load();
     }
 
     /**
@@ -23,11 +23,19 @@ class FrontAssetsLoader implements FrontAssetsLoaderInterface
     }
 
     /**
+     * @return string the base folder path
+     */
+    public function basePath(): string
+    {
+        return dirname($_SERVER["DOCUMENT_ROOT"] . '../');
+    }
+
+    /**
      * @return string the public folder path
      */
     public function publicPath(): string
     {
-        return dirname(__DIR__ . '../../');
+        return dirname($_SERVER["DOCUMENT_ROOT"]);
     }
 
     /**
@@ -35,7 +43,7 @@ class FrontAssetsLoader implements FrontAssetsLoaderInterface
      */
     public function getJavascriptApp(): string
     {
-        $manifest = file_get_contents($this->publicPath() . getenv('MANIFEST_RELATIVE_PATH') . 'manifest.json');
+        $manifest = file_get_contents($this->basePath() . getenv('MANIFEST_RELATIVE_PATH') . 'manifest.json');
         $jsonArray = json_decode($manifest, true);
         return (string) $jsonArray['app.js'];
     }

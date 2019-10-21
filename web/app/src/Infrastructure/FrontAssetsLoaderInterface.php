@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace WeDev\Wedev\Infrastructure;
+namespace WeDev\WeDev\Infrastructure;
 
 interface FrontAssetsLoaderInterface
 {
