@@ -11,7 +11,7 @@ class FrontAssetsLoader implements FrontAssetsLoaderInterface
 
     public function __construct()
     {
-        (Dotenv::create(dirname($_SERVER["DOCUMENT_ROOT"] . '../')))->load();
+        (Dotenv::create(dirname(__DIR__ . '/../../../..')))->load();
     }
 
     /**
@@ -27,7 +27,7 @@ class FrontAssetsLoader implements FrontAssetsLoaderInterface
      */
     public function basePath(): string
     {
-        return dirname($_SERVER["DOCUMENT_ROOT"] . '../');
+        return dirname(__DIR__ . '/../../../..');
     }
 
     /**
@@ -35,7 +35,7 @@ class FrontAssetsLoader implements FrontAssetsLoaderInterface
      */
     public function publicPath(): string
     {
-        return dirname($_SERVER["DOCUMENT_ROOT"]);
+        return dirname(__DIR__ . '/../../..');
     }
 
     /**
