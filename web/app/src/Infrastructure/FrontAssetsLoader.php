@@ -8,10 +8,14 @@ use Dotenv\Dotenv;
 class FrontAssetsLoader implements FrontAssetsLoaderInterface
 {
     private const MANIFEST_ENV_KEY = 'MANIFEST_RELATIVE_PATH';
+    private const MANIFEST_FILE_NAME = 'manifest.json';
+    private const MAIN_JS_FILE = 'app.js';
+    private const BASE_RELATIVE_PATH = '/../../../..';
+    private const PUBLIC_RELATIVE_PATH = '/../../..';
 
     public function __construct()
     {
-        (Dotenv::create(dirname(__DIR__ . '/../../../..')))->load();
+        (Dotenv::create($this->basePath()))->load();
     }
 
     /**
@@ -27,7 +31,7 @@ class FrontAssetsLoader implements FrontAssetsLoaderInterface
      */
     public function basePath(): string
     {
-        return dirname(__DIR__ . '/../../../..');
+        return dirname(__DIR__ . self::BASE_RELATIVE_PATH);
     }
 
     /**
@@ -35,7 +39,7 @@ class FrontAssetsLoader implements FrontAssetsLoaderInterface
      */
     public function publicPath(): string
     {
-        return dirname(__DIR__ . '/../../..');
+        return dirname(__DIR__ . self::PUBLIC_RELATIVE_PATH);
     }
 
     /**
@@ -43,8 +47,8 @@ class FrontAssetsLoader implements FrontAssetsLoaderInterface
      */
     public function getJavascriptApp(): string
     {
-        $manifest = file_get_contents($this->basePath() . getenv('MANIFEST_RELATIVE_PATH') . 'manifest.json');
+        $manifest = file_get_contents($this->basePath() . $this->getManifestPath() . self::MANIFEST_FILE_NAME);
         $jsonArray = json_decode($manifest, true);
-        return (string) $jsonArray['app.js'];
+        return (string) $jsonArray[self::MAIN_JS_FILE];
     }
 }
